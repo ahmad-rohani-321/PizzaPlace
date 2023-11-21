@@ -1,5 +1,10 @@
 ﻿@page "/"
-
+<h1>Hello world</h1>
+<button class="btn btn-success" @onclick="ToggleAlert">Toggle</button>
+<Alert Show="@ShowAlert">
+    <span class="oi oi-check mr-2" aria-hidden="true"></span>
+    <strong>Blazor is so cool!!!</strong>
+</Alert>
 <!-- Menu  -->
 <h1>Our selection of pizzas</h1>
 @foreach (var pizza in State.Menu.Pizzas)
@@ -113,4 +118,6 @@
     {
         Console.WriteLine("Hello world");
     }
+    public bool ShowAlert { get; set; } = true;
+    public void ToggleAlert() => ShowAlert = !ShowAlert;
 }
